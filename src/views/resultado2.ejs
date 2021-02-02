@@ -15,23 +15,31 @@
   <div class="container mt-5">
     <div class="card mt-2 mb-2 ">
       <div class="card-body  ">
-        <h5 class="display-5 text-center">Resultado do Endereço Por Município</h5>
+        <h5 class="display-5 text-center">Resultado da Sigla Por Município</h5>
         <table class="table mt-5">
           <thead class="table-striped">
             <tr>
-              <th scope="col">*</th>
-              <th scope="col">*</th>
-              <th scope="col">*</th>
-              <th scope="col">*</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Sigla</th>
+              <th scope="col">ID</th>
+              <th scope="col">Nome Município</th>
+              <th scope="col">Microrregiao</th>
+              
+            
             </tr>
           </thead>
           <tbody>
-            <tr class="table-secondary">
-              <td><%= dado.nome %></td>
-              <td>*</td>
-              <td>*</td>
-              <td>*</td>
-            </tr>
+           
+              <% for(i=0;i<dado.length;i++){%>
+                <tr class="table-secondary">
+                <td><%= dado[i].microrregiao.mesorregiao.UF.nome %></td>
+                <td><%= dado[i].microrregiao.mesorregiao.UF.sigla %></td>
+                <td><%= dado[i].id %></td>
+                <td><%= dado[i].nome %></td>
+                <td><%= dado[i].microrregiao.nome %></td>
+              </tr>
+              <% }%>
+         
           </tbody>
         </table>
       </div>
